@@ -87,7 +87,7 @@ class App extends Component {
                   {Testing.map((val) =>
                     <tr>
                       <td key={val.id}><Link to={`/show/${val.key}`}>{val.Name}</Link></td>
-                      <td>{new Date(val.FilterStart.second * 1000).toLocaleString('en-IN')}</td>
+                      <td>{new Date(val.FilterStart.seconds * 1000).toLocaleString('en-IN')}</td>
                       <td>{new Date(val.FilterEnd.seconds * 1000).toLocaleString('en-IN')}</td>
                       <td>{new Date(val.HeaterStart.seconds * 1000).toLocaleDateString('en-IN')}</td>
                       <td>{new Date(val.HeaterEnd.seconds * 1000).toLocaleDateString('en-IN')}</td>

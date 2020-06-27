@@ -88,22 +88,22 @@ class Edit extends Component {
                             </div>
                             <div className='form-goup'>
                                 <label for='FilterStart'>FilterStart:</label>
-                                <input type='datetime-local' name='FilterStart' value={this.state.FilterStart}
+                                <input type='datetime-local' name='FilterStart' value={new Date(this.state.FilterStart.seconds * 1000).toLocaleString('en-IN')}
                                     onChange={this.chnageHandle} className='form-control' id='FilterStart' />
                             </div>
                             <div className='form-goup'>
                                 <label for='FilterEnd'>FilterEnd</label>
-                                <input type='datetime-local' name='FilterEnd' value={this.state.FilterEnd}
+                                <input type='datetime-local' name='FilterEnd' value={new Date(this.state.FilterEnd.seconds * 1000).toLocaleString('en-IN')}
                                     onChange={this.chnageHandle} className='form-control' id='FilterEnd' />
                             </div>
                             <div className='form-goup'>
                                 <label for='HeaterStart'>HeaterStart</label>
-                                <input type='datetime-local' name='HeaterStart' value={this.state.HeaterStart}
+                                <input type='datetime-local' name='HeaterStart' value={new Date(this.state.HeaterStart.seconds * 1000).toLocaleString('en-IN')}
                                     onChange={this.chnageHandle} className='form-control' id='HeaterStart' />
                             </div>
                             <div className='form-goup'>
                                 <label for='HeaterEnd'>HeaterEnd</label>
-                                <input type='datetime-local' name='HeaterEnd' value={this.state.HeaterEnd}
+                                <input type='datetime-local' name='HeaterEnd' value={new Date(this.state.HeaterEnd.seconds * 1000).toLocaleString('en-IN')}
                                     onChange={this.chnageHandle} className='form-control' id='HeaterEnd' />
                             </div>
                             <div className='form-goup'>

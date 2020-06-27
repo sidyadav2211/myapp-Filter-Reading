@@ -12,8 +12,8 @@ import Edit from './Components/Edit'
 import * as serviceWorker from './serviceWorker';
 
 ReactDOM.render(
-  <Router>
-    <Route exact path='/myapp-Filter-Reading/' component={App} />
+  <Router basename={process.env.PUBLIC_URL}>
+    <Route exact path='/' component={App} />
     <Route path='/create' component={Create} />
     <Route path="/show/:id" component={Show} />
     <Route path='/edit/:id' component={Edit} />

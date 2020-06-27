@@ -47,13 +47,13 @@ class Show extends Component {
                     <div className='panel-body'>
                         <dl>
                             <dt>FilterStart:</dt>
-                            <dd>{this.state.testing.FilterStart}</dd>
+                            <dd>{new Date(this.state.testing.FilterStart.seconds * 1000).toLocaleString('en-IN')}</dd>
                             <dt>FilterEnd:</dt>
-                            <dd>{this.state.testing.FilterEnd}</dd>
+                            <dd>{new Date(this.state.testing.FilterEnd.seconds * 1000).toLocaleString('en-IN')}</dd>
                             <dt>HeaterStart:</dt>
-                            <dd>{this.state.testing.HeaterStart}</dd>
+                            <dd>{new Date(this.state.testing.HeaterStart.seconds * 1000).toLocaleString('en-IN')}</dd>
                             <dt>HeaterEnd:</dt>
-                            <dd>{this.state.testing.HeaterEnd}</dd>
+                            <dd>{new Date(this.state.testing.HeaterEnd.seconds * 1000).toLocaleString('en-IN')}</dd>
                             <dt>TempIn:</dt>
                             <dd>{this.state.testing.TempIn}</dd>
                             <dt>TempOut</dt>

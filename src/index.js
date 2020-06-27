@@ -13,7 +13,7 @@ import * as serviceWorker from './serviceWorker';
 
 ReactDOM.render(
   <Router>
-    <Route exact path='/' component={App} />
+    <Route exact path='/myapp-Filter-Reading/' component={App} />
     <Route path='/create' component={Create} />
     <Route path="/show/:id" component={Show} />
     <Route path='/edit/:id' component={Edit} />

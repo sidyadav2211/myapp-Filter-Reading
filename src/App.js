@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { db } from './Firebase'
 import { Link } from 'react-router-dom'
-
+import moment from 'moment'
 import './App.css';
 
 
@@ -54,6 +54,9 @@ class App extends Component {
 
     // console.log('True')
   }
+  componentWillUnmount() {
+    this.unsubscribe = null
+  }
   render() {
     const { Testing, isLoading } = this.state
     return (
@@ -87,10 +90,10 @@ class App extends Component {
                   {Testing.map((val) =>
                     <tr>
                       <td key={val.id}><Link to={`/show/${val.key}`}>{val.Name}</Link></td>
-                      <td>{new Date(val.FilterStart.seconds * 1000).toLocaleString('en-IN')}</td>
-                      <td>{new Date(val.FilterEnd.seconds * 1000).toLocaleString('en-IN')}</td>
-                      <td>{new Date(val.HeaterStart.seconds * 1000).toLocaleDateString('en-IN')}</td>
-                      <td>{new Date(val.HeaterEnd.seconds * 1000).toLocaleDateString('en-IN')}</td>
+                      <td>{moment(val.FilterStart).calendar()}</td>
+                      <td>{moment(val.FilterEnd).calendar()}</td>
+                      <td>{moment(val.HeaterStart).calendar()}</td>
+                      <td>{moment(val.HeaterEnd).calendar()}</td>
                       <td>{val.TempIn}</td>
                       <td>{val.TempOut}</td>
                     </tr>

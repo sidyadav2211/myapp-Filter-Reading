@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
 import { db } from '../Firebase'
-
+import moment from 'moment'
 class Show extends Component {
     state = {
         testing: {},
@@ -47,13 +47,13 @@ class Show extends Component {
                     <div className='panel-body'>
                         <dl>
                             <dt>FilterStart:</dt>
-                            <dd>{new Date(this.state.testing.FilterStart.seconds * 1000).toLocaleString('en-IN')}</dd>
+                            <dd>{moment(this.state.testing.FilterStart).format("MMMM Do YYYY, h:mm:ss a")}</dd>
                             <dt>FilterEnd:</dt>
-                            <dd>{new Date(this.state.testing.FilterEnd.seconds * 1000).toLocaleString('en-IN')}</dd>
+                            <dd>{moment(this.state.testing.FilterEnd).format("MMMM Do YYYY, h:mm:ss a")}</dd>
                             <dt>HeaterStart:</dt>
-                            <dd>{new Date(this.state.testing.HeaterStart.seconds * 1000).toLocaleString('en-IN')}</dd>
+                            <dd>{moment(this.state.testing.HeaterStart).format("MMMM Do YYYY, h:mm:ss a")}</dd>
                             <dt>HeaterEnd:</dt>
-                            <dd>{new Date(this.state.testing.HeaterEnd.seconds * 1000).toLocaleString('en-IN')}</dd>
+                            <dd>{moment(this.state.testing.HeaterEnd).format("MMMM Do YYYY, h:mm:ss a")}</dd>
                             <dt>TempIn:</dt>
                             <dd>{this.state.testing.TempIn}</dd>
                             <dt>TempOut</dt>

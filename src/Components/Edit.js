@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { db } from '../Firebase'
 import { Link } from 'react-router-dom'
 
+
 class Edit extends Component {
     state = {
         key: '',
@@ -19,7 +20,7 @@ class Edit extends Component {
         ref.get().then((doc) => {
             if (doc.exists) {
                 const testing = doc.data()
-                console.log('Geeting Data', doc.data)
+                console.log('Geting Data', doc.data)
                 this.setState({
                     key: doc.id,
                     Name: testing.Name,
@@ -82,41 +83,50 @@ class Edit extends Component {
                         <h4><Link to={`/show/${this.state.key}`} className='btn btn-info'>Go Back</Link></h4>
                         <form onSubmit={this.submitHandle}>
                             <div className='form-goup'>
-                                <label for='Name'>Name:</label>
+                                <label htmlFor='Name'>Name:</label>
                                 <input type='text' name='Name' value={this.state.Name}
                                     onChange={this.chnageHandle} className='form-control' id='Name' />
                             </div>
                             <div className='form-goup'>
-                                <label for='FilterStart'>FilterStart:</label>
-                                <input type='datetime-local' name='FilterStart' value={new Date(this.state.FilterStart.seconds * 1000).toLocaleString('en-IN')}
-                                    onChange={this.chnageHandle} className='form-control' id='FilterStart' />
+                                <label htmlFor='FilterStart'>FilterStart:</label>
+                                <input type='datetime-local' name='FilterStart' value={this.state.FilterStart}
+                                    onChange={this.chnageHandle} className='form-control' id='FilterStart'
+                                />
+
                             </div>
                             <div className='form-goup'>
-                                <label for='FilterEnd'>FilterEnd</label>
-                                <input type='datetime-local' name='FilterEnd' value={new Date(this.state.FilterEnd.seconds * 1000).toLocaleString('en-IN')}
-                                    onChange={this.chnageHandle} className='form-control' id='FilterEnd' />
+                                <label htmlFor='FilterEnd'>FilterEnd</label>
+                                <input type='datetime-local' name='FilterEnd' value={this.state.FilterEnd}
+                                    onChange={this.chnageHandle} className='form-control' id='FilterEnd'
+                                />
+
                             </div>
                             <div className='form-goup'>
-                                <label for='HeaterStart'>HeaterStart</label>
-                                <input type='datetime-local' name='HeaterStart' value={new Date(this.state.HeaterStart.seconds * 1000).toLocaleString('en-IN')}
-                                    onChange={this.chnageHandle} className='form-control' id='HeaterStart' />
+                                <label htmlFor='HeaterStart'>HeaterStart</label>
+                                <input type='datetime-local' name='HeaterStart' value={this.state.HeaterStart}
+                                    onChange={this.chnageHandle} className='form-control' id='HeaterStart'
+                                />
+
                             </div>
                             <div className='form-goup'>
-                                <label for='HeaterEnd'>HeaterEnd</label>
-                                <input type='datetime-local' name='HeaterEnd' value={new Date(this.state.HeaterEnd.seconds * 1000).toLocaleString('en-IN')}
-                                    onChange={this.chnageHandle} className='form-control' id='HeaterEnd' />
+                                <label htmlFor='HeaterEnd'>HeaterEnd</label>
+                                <input type='datetime-local' name='HeaterEnd' value={this.state.HeaterEnd}
+                                    onChange={this.chnageHandle} className='form-control' id='HeaterEnd'
+                                />
+
                             </div>
                             <div className='form-goup'>
-                                <label for='TempIn'>TempIn</label>
+                                <label htmlFor='TempIn'>TempIn</label>
                                 <input type='number' name='TempIn' value={this.state.TempIn}
                                     onChange={this.chnageHandle} className='form-control' id='TempIn' />
                             </div>
                             <div className='form-goup'>
-                                <label for='TempOut'>TempOut</label>
+                                <label htmlFor='TempOut'>TempOut</label>
                                 <input type='number' placeholder='Temperature' name='TempOut' value={this.state.TempOut}
                                     onChange={this.chnageHandle} className='form-control' id='TempOut' />
                             </div>
-                            <button type='submit' className='btn btn-primary' value='Submit' />
+                            <br />
+                            <button type='submit' className='btn btn-primary'>Submit</button>
                         </form>
                     </div>
 

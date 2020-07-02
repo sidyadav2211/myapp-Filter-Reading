@@ -90,10 +90,10 @@ class App extends Component {
                   {Testing.map((val) =>
                     <tr>
                       <td key={val.id}><Link to={`/show/${val.key}`}>{val.Name}</Link></td>
-                      <td>{moment(val.FilterStart).calendar()}</td>
-                      <td>{moment(val.FilterEnd).calendar()}</td>
-                      <td>{moment(val.HeaterStart).calendar()}</td>
-                      <td>{moment(val.HeaterEnd).calendar()}</td>
+                      <td>{moment(val.FilterStart).format("MMMM Do YYYY, h:mm:ss a")}</td>
+                      <td>{moment(val.FilterEnd).format("MMMM Do YYYY, h:mm:ss a")}</td>
+                      <td>{moment(val.HeaterStart).format("MMMM Do YYYY, h:mm:ss a")}</td>
+                      <td>{moment(val.HeaterEnd).format("MMMM Do YYYY, h:mm:ss a")}</td>
                       <td>{val.TempIn}</td>
                       <td>{val.TempOut}</td>
                     </tr>

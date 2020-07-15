@@ -48,12 +48,10 @@ class Show extends Component {
                         <dl>
                             <dt>FilterStart:</dt>
                             <dd>{moment(this.state.testing.FilterStart).format("MMMM Do YYYY, h:mm:ss a")}</dd>
-                            <dt>FilterEnd:</dt>
-                            <dd>{moment(this.state.testing.FilterEnd).format("MMMM Do YYYY, h:mm:ss a")}</dd>
+
                             <dt>HeaterStart:</dt>
                             <dd>{moment(this.state.testing.HeaterStart).format("MMMM Do YYYY, h:mm:ss a")}</dd>
-                            <dt>HeaterEnd:</dt>
-                            <dd>{moment(this.state.testing.HeaterEnd).format("MMMM Do YYYY, h:mm:ss a")}</dd>
+
                             <dt>TempIn:</dt>
                             <dd>{this.state.testing.TempIn}</dd>
                             <dt>TempOut</dt>

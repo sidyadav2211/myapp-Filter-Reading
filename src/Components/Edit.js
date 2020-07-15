@@ -8,9 +8,9 @@ class Edit extends Component {
         key: '',
         Name: '',
         FilterStart: '',
-        FilterEnd: '',
+
         HeaterStart: '',
-        HeaterEnd: '',
+
         TempIn: '',
         TempOut: ''
 
@@ -25,9 +25,9 @@ class Edit extends Component {
                     key: doc.id,
                     Name: testing.Name,
                     FilterStart: testing.FilterStart,
-                    FilterEnd: testing.HeaterEnd,
+
                     HeaterStart: testing.HeaterStart,
-                    HeaterEnd: testing.HeaterEnd,
+
                     TempIn: testing.TempIn,
                     TempOut: testing.TempOut
                 })
@@ -43,14 +43,14 @@ class Edit extends Component {
     }
     submitHandle = (e) => {
         e.preventDefault()
-        const { Name, FilterStart, FilterEnd, HeaterStart, HeaterEnd, TempIn, TempOut } = this.state
+        const { Name, FilterStart, HeaterStart, TempIn, TempOut } = this.state
         const updateRef = db.collection('Testing').doc(this.state.key)
         updateRef.set({
             Name,
             FilterStart,
-            FilterEnd,
+
             HeaterStart,
-            HeaterEnd,
+
             TempIn,
             TempOut
         }).then((docRef) => {
@@ -58,9 +58,9 @@ class Edit extends Component {
                 key: '',
                 Name: '',
                 FilterStart: '',
-                FilterEnd: '',
+
                 HeaterStart: '',
-                HeaterEnd: '',
+
                 TempIn: '',
                 TempOut: '',
             })
@@ -94,13 +94,7 @@ class Edit extends Component {
                                 />
 
                             </div>
-                            <div className='form-goup'>
-                                <label htmlFor='FilterEnd'>FilterEnd</label>
-                                <input type='datetime-local' name='FilterEnd' value={this.state.FilterEnd}
-                                    onChange={this.chnageHandle} className='form-control' id='FilterEnd'
-                                />
 
-                            </div>
                             <div className='form-goup'>
                                 <label htmlFor='HeaterStart'>HeaterStart</label>
                                 <input type='datetime-local' name='HeaterStart' value={this.state.HeaterStart}
@@ -108,13 +102,7 @@ class Edit extends Component {
                                 />
 
                             </div>
-                            <div className='form-goup'>
-                                <label htmlFor='HeaterEnd'>HeaterEnd</label>
-                                <input type='datetime-local' name='HeaterEnd' value={this.state.HeaterEnd}
-                                    onChange={this.chnageHandle} className='form-control' id='HeaterEnd'
-                                />
 
-                            </div>
                             <div className='form-goup'>
                                 <label htmlFor='TempIn'>TempIn</label>
                                 <input type='number' name='TempIn' value={this.state.TempIn}

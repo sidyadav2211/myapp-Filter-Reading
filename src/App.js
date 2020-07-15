@@ -194,18 +194,18 @@ class App extends Component {
                   )}
                 </tbody>
               </table>
-              <button className='btn btn-outline-primary' onClick={this.handlerPageChange1}
-                value={this.state.activePage}>1</button>
-              <button className='btn btn-outline-primary' onClick={this.handlerPageChange2}
-                value={this.state.activePage}>2</button>
-              <button className='btn btn-outline-primary' onClick={this.handlerPageChange3}
-                value={this.state.activePage}>3</button>
-              <button className='btn btn-outline-primary' onClick={this.handlerPageChange4}
-                value={this.state.activePage}>4</button>
-              <button className='btn btn-outline-primary' onClick={this.handlerPageChange5}
-                value={this.state.activePage}>5</button>
-            </div>
 
+            </div>
+            <button className='btn btn-outline-primary' onClick={this.handlerPageChange1}
+              value={this.state.activePage}>1</button>
+            <button className='btn btn-outline-primary' onClick={this.handlerPageChange2}
+              value={this.state.activePage}>2</button>
+            <button className='btn btn-outline-primary' onClick={this.handlerPageChange3}
+              value={this.state.activePage}>3</button>
+            <button className='btn btn-outline-primary' onClick={this.handlerPageChange4}
+              value={this.state.activePage}>4</button>
+            <button className='btn btn-outline-primary' onClick={this.handlerPageChange5}
+              value={this.state.activePage}>5</button>
           </div>
         </div>
 

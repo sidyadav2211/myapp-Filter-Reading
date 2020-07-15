@@ -119,28 +119,31 @@ class Stop extends Component {
         return (
             <div className='container'>
                 <h3>End Reading</h3>
-                <table className="table table-striped" >
-                    <thead>
-                        <tr>
-                            <th>Name</th>
-                            <th>FilterEnd</th>
-                            <th>HeaterEnd</th>
-                            <th>TempIn</th>
-                            <th>TempOut</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        {Stop.map(res =>
+                <div className='table table-responsive-sm'>
+                    <table className="table table-striped" >
+                        <thead>
                             <tr>
-                                <td key={res}>{res.Name}</td>
-                                <td>{moment(res.FilterEnd).format("MMMM Do YYYY, h:mm:ss a")}</td>
-                                <td>{moment(res.HeaterEnd).format("MMMM Do YYYY, h:mm:ss a")}</td>
-                                <td>{res.TempIn}</td>
-                                <td>{res.TempOut}</td>
+                                <th>Name</th>
+                                <th>FilterEnd</th>
+                                <th>HeaterEnd</th>
+                                <th>TempIn</th>
+                                <th>TempOut</th>
                             </tr>
-                        )}
-                    </tbody>
-                </table>
+                        </thead>
+                        <tbody>
+                            {Stop.map(res =>
+                                <tr>
+                                    <td key={res}>{res.Name}</td>
+                                    <td>{moment(res.FilterEnd).format("MMMM Do YYYY, h:mm:ss a")}</td>
+                                    <td>{moment(res.HeaterEnd).format("MMMM Do YYYY, h:mm:ss a")}</td>
+                                    <td>{res.TempIn}</td>
+                                    <td>{res.TempOut}</td>
+                                </tr>
+                            )}
+                        </tbody>
+                    </table>
+                </div>
+
 
                 {/* List Group */}
                 {/* {Stop.map(res =>

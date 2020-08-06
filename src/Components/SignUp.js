@@ -1,38 +1,55 @@
-import React, { useCallback } from 'react'
-import { withRouter } from 'react-router'
-import { firebaseAuth } from '../Firebase'
 
-const SignUp = ({ history }) => {
-    const handleSignUp = useCallback(async event => {
-        event.preventDefault();
-        const { email, password } = event.target.elements;
-        try {
-            await firebaseAuth.createUserWithEmailAndPassword(email.value, password.value);
-            history.push("/");
-        } catch (error) {
-            alert(error);
-        }
-    }, [history]);
+// import React, { Component } from 'react'
+// import firebase from 'firebase'
+// import StyledFirebaseAuth from 'react-firebaseui/StyledFirebaseAuth'
 
-    return (
-        <div className='container'>
-            <h1>Sign up</h1>
-            <form onSubmit={handleSignUp} >
-                <div className='form-group'>
-                    <label className='control-label'>
-                        Email</label>
-                    <input className='form-control' name="email" type="email" placeholder="Email" />
 
-                    <label className='control-form'>
-                        Password</label>
-                    <input name="password" type="password" className='form-control' placeholder="Password" />
 
-                    <button type="submit" style={{ marginTop: '25px' }} className='btn btn-primary'>Sign Up</button>
-                </div>
 
-            </form>
-        </div>
-    );
-};
+// class SignUp extends Component {
+//     state = { isSignedIn: false }
+//     uiConfig = {
+//         signInFlow: 'popup',
+//         signInOptions: [
+//             firebase.auth.GoogleAuthProvider.PROVIDER_ID,
+//             firebase.auth.FacebookAuthProvider.PROVIDER_ID,
+//             firebase.auth.EmailAuthProvider.PROVIDER_ID
+//         ],
+//         callbacks: {
 
-export default withRouter(SignUp);
+//             signInSuccess: () => false
+//         }
+
+//     }
+//     componentDidMount = () => {
+//         this.unregisterAuthObserver = firebase.auth().onAuthStateChanged(user => {
+
+//             this.setState({
+//                 isSignedIn: !!user
+//             })
+//             console.log('name:', user)
+//         })
+//     }
+//     // componentWillUnmount() {
+//     //     this.unregisterAuthObserver()
+//     // }
+//     render() {
+//         return (
+//             <div>
+//                 {this.state.isSignedIn ? (
+//                     <span>
+//                         <h2>Sign In</h2>
+
+//                         <button className='btn btn-primary' onClick={firebase.auth().signOut()}>Sign Out</button>
+//                     </span>
+//                 ) : (
+//                         <StyledFirebaseAuth
+//                             uiConfig={this.uiConfig}
+//                             firebaseAuth={firebase.auth()} />
+//                     )}
+
+//             </div>
+//         )
+//     }
+// }
+// export default SignUp;

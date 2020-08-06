@@ -9,28 +9,28 @@ import App from './App';
 import Show from './Components/Show'
 import Create from './Components/Create.js'
 import Edit from './Components/Edit'
-import Login from './Components/Login'
-import { AuthProvider } from './Components/Auth'
-import Signup from './Components/SignUp'
+// import Login from './Components/Login'
+// import { AuthProvider } from './Components/Auth'
+// import Signup from './Components/SignUp'
 import Create1 from './Components/Create1'
-import PrivateRoute from './Components/PrivateRoute'
+// import PrivateRoute from './Components/PrivateRoute'
 
 import * as serviceWorker from './serviceWorker';
 
 ReactDOM.render(
-  <AuthProvider>
-    <Router basename={process.env.PUBLIC_URL}>
-      <PrivateRoute exact path='/' component={App} />
-      <Route path='/create' component={Create} />
-      <Route path='/create1' component={Create1} />
-      <Route path='/login' component={Login} />
-      <Route path='/signup' component={Signup} />
-      <Route path="/show/:id" component={Show} />
 
-      <Route path='/edit/:id' component={Edit} />
+  <Router basename={process.env.PUBLIC_URL}>
+    <Route exact path='/' component={App} />
+    <Route path='/create' component={Create} />
+    <Route path='/create1' component={Create1} />
+    {/* <Route path='/login' component={Login} /> */}
+    {/* <Route path='/signup' component={Signup} /> */}
+    <Route path="/show/:id" component={Show} />
 
-    </Router>
-  </AuthProvider>
+    <Route path='/edit/:id' component={Edit} />
+
+  </Router>
+  // </AuthProvider>
   ,
   document.getElementById('root')
 );
